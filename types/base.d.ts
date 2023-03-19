@@ -1,3 +1,3 @@
 export interface DefaultPageProps {
-  themeColor: string;
+  themeColor?: string;
 }

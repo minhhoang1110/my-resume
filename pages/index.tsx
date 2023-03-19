@@ -14,6 +14,24 @@ export const getStaticProps: GetStaticProps = async () => {
           data: {
             logo: "TMH",
             phone: "0944 283 271",
+            menus: [
+              {
+                label: "Home",
+                link: "/",
+              },
+              {
+                label: "About Me",
+                link: "/",
+              },
+              {
+                label: "Resume",
+                link: "/",
+              },
+              {
+                label: "Contact Me",
+                link: "/",
+              },
+            ],
           },
         },
       ],
