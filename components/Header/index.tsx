@@ -3,13 +3,17 @@ import { Box, Flex, Icon } from "@chakra-ui/react";
 import Container from "../Container";
 import { FaPhone } from "react-icons/fa";
 import Menu, { MenuItem } from "../Menu";
+import { useSelector } from "react-redux";
 
 interface Props extends DefaultPageProps {
   logo: string;
   phone: string;
   menus: MenuItem[];
 }
-const Header: React.FC<Props> = ({ themeColor, logo, phone, menus }) => {
+const Header: React.FC<Props> = ({ logo, phone, menus }) => {
+  const themeColor: string = useSelector(
+    (state: any) => state.themeColorReducer
+  );
   return (
     <Box bg={themeColor} position="fixed" top={"0"} left={"0"} width={"full"}>
       <Container themeColor={themeColor}>
@@ -31,7 +35,7 @@ const Header: React.FC<Props> = ({ themeColor, logo, phone, menus }) => {
               marginRight={"8px"}
             />
             <Box marginRight={"8px"}>{phone}</Box>
-            <Menu menus={menus} />
+            <Menu menus={menus} themeColor={themeColor} />
           </Flex>
         </Flex>
       </Container>

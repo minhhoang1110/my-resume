@@ -8,7 +8,7 @@ interface Props {
 const renderAllSections = ({ data, type }: Props) => {
   switch (type) {
     case "header":
-      return <Header themeColor="#fdbb2e" {...data} />;
+      return <Header {...data} />;
     default:
       return "";
   }

@@ -17,7 +17,7 @@ export interface MenuItem {
 interface Props extends DefaultPageProps {
   menus: MenuItem[];
 }
-const Menu: React.FC<Props> = ({ menus }) => {
+const Menu: React.FC<Props> = ({ menus, themeColor }) => {
   const [isClickedButton, setIsClickedButton] = useState(false);
   const handleOnClickButton = () => {
     setIsClickedButton(!isClickedButton);
@@ -127,7 +127,7 @@ const Menu: React.FC<Props> = ({ menus }) => {
                       isClickedButton ? "translateY(0)" : "translateY(-80px)"
                     }
                     opacity={isClickedButton ? "1" : "0"}
-                    _hover={{ textDecoration: "none" }}
+                    _hover={{ textDecoration: "none", color: themeColor }}
                   >
                     {menu.label}
                   </Link>
@@ -162,6 +162,7 @@ const Menu: React.FC<Props> = ({ menus }) => {
                 width={"full"}
                 height="full"
                 href="https://github.com/minhhoang1110"
+                _hover={{ textDecoration: "none", color: themeColor }}
               >
                 <Icon as={FaGithub} />
               </Link>
@@ -187,6 +188,7 @@ const Menu: React.FC<Props> = ({ menus }) => {
                 width={"full"}
                 height="full"
                 href="https://www.linkedin.com/in/hoang-truong-4a0a471a6/"
+                _hover={{ textDecoration: "none", color: themeColor }}
               >
                 <Icon as={FaLinkedin} />
               </Link>
