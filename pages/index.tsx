@@ -44,6 +44,20 @@ export const getStaticProps: GetStaticProps = async () => {
             actionLink: "#",
           },
         },
+        {
+          type: "aboutMe",
+          data: {
+            title: "Know Me More",
+            subtitle: "About Me",
+            name: "Truong Minh Hoang",
+            description:
+              "I have 2 years of experience as a Front-end Developer with HTML, CSS, and Javascript and Good at creating pixel-perfect designs and working with cross-browser compatibility issues. I'm looking for a suitable position with a company where I can use my skills and experience, learn new knowledge, and where outstanding performance is recognized, and rewarded.",
+            yearOfExp: 2,
+            dateOfBirth: "17 August, 1999",
+            email: "minhhoang111099@gmail.com",
+            address: "Ho Chi Minh City, VN.",
+          },
+        },
       ],
       bgColor: "#ffffff",
       textColor: "#212529",

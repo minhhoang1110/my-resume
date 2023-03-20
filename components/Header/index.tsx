@@ -4,6 +4,7 @@ import Container from "../Container";
 import { FaPhone } from "react-icons/fa";
 import Menu, { MenuItem } from "../Menu";
 import { useSelector } from "react-redux";
+import { useScrolling } from "@/hooks";
 
 interface Props extends DefaultPageProps {
   logo: string;
@@ -14,9 +15,20 @@ const Header: React.FC<Props> = ({ logo, phone, menus }) => {
   const themeColor: string = useSelector(
     (state: any) => state.themeColorReducer
   );
+  const { isScrolling, scrollTop } = useScrolling();
   return (
-    <Box bg={themeColor} position="fixed" top={"0"} left={"0"} width={"full"}>
-      <Container themeColor={themeColor}>
+    <Box
+      bg={isScrolling && scrollTop > 0 ? "#ffffff" : themeColor}
+      position="fixed"
+      top={"0"}
+      left={"0"}
+      zIndex="800"
+      width={"full"}
+      borderBottom={isScrolling && scrollTop > 0 ? "1px solid #efefef" : "none"}
+    >
+      <Container
+        themeColor={isScrolling && scrollTop > 0 ? "#ffffff" : themeColor}
+      >
         <Flex alignItems={"center"} justifyContent="space-between">
           <Box fontSize={"23px"} fontWeight="800" lineHeight={"32px"}>
             {logo}

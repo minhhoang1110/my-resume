@@ -1,3 +1,4 @@
+import AboutMeSection from "../AboutMeSection";
 import Header from "../Header";
 import HomeBanner from "../HomeBanner";
 
@@ -12,6 +13,8 @@ const renderAllSections = ({ data, type }: Props) => {
       return <Header {...data} />;
     case "homeBanner":
       return <HomeBanner {...data} />;
+    case "aboutMe":
+      return <AboutMeSection {...data} />;
     default:
       return "";
   }
