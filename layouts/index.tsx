@@ -9,7 +9,7 @@ interface Props {
 
 const MainLayout = ({ children, bgColor, textColor }: Props) => {
   return (
-    <VStack pt="67px" bgColor={bgColor} color={textColor}>
+    <VStack pt="66px" bgColor={bgColor} color={textColor}>
       {children}
     </VStack>
   );

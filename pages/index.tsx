@@ -34,6 +34,16 @@ export const getStaticProps: GetStaticProps = async () => {
             ],
           },
         },
+        {
+          type: "homeBanner",
+          data: {
+            greeting: "Hi, I'm Minh Hoang",
+            typeWriters: ["Front-end", "Developer"],
+            location: "live in Ho Chi Minh City, VN.",
+            action: "Contact Me",
+            actionLink: "#",
+          },
+        },
       ],
       bgColor: "#ffffff",
       textColor: "#212529",

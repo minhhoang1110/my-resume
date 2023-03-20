@@ -11,6 +11,7 @@ const Container: React.FC<Props> = ({ children, themeColor }) => {
       bg={themeColor}
       maxWidth="1320px"
       width={"full"}
+      height="full"
       margin={"0 auto"}
       padding="0 12px"
     >
