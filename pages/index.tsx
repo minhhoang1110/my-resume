@@ -12,8 +12,8 @@ export const getStaticProps: GetStaticProps = async () => {
         {
           type: "header",
           data: {
-            logo: "TMH",
-            phone: "0944 283 271",
+            logo: process.env.NEXT_PUBLIC_BRAND_NAME || "",
+            phone: process.env.NEXT_PUBLIC_PHONE || "",
             menus: [
               {
                 label: "Home",
@@ -37,11 +37,12 @@ export const getStaticProps: GetStaticProps = async () => {
         {
           type: "homeBanner",
           data: {
-            greeting: "Hi, I'm Minh Hoang",
+            greeting: "Hi, I'm Minh Hoàng",
             typeWriters: ["Front-end", "Developer"],
             location: "live in Ho Chi Minh City, VN.",
             action: "Contact Me",
             actionLink: "#",
+            image: "/images/potrait.jpg",
           },
         },
         {
@@ -49,12 +50,12 @@ export const getStaticProps: GetStaticProps = async () => {
           data: {
             title: "Know Me More",
             subtitle: "About Me",
-            name: "Truong Minh Hoang",
+            name: process.env.NEXT_PUBLIC_NAME || "",
             description:
               "I have 2 years of experience as a Front-end Developer with HTML, CSS, and Javascript and Good at creating pixel-perfect designs and working with cross-browser compatibility issues. I'm looking for a suitable position with a company where I can use my skills and experience, learn new knowledge, and where outstanding performance is recognized, and rewarded.",
             yearOfExp: 2,
             dateOfBirth: "17 August, 1999",
-            email: "minhhoang111099@gmail.com",
+            email: process.env.NEXT_PUBLIC_EMAIL || "",
             address: "Ho Chi Minh City, VN.",
           },
         },
@@ -102,8 +103,24 @@ export const getStaticProps: GetStaticProps = async () => {
               "REST",
               "Git",
             ],
-            downloadCVLink:
-              "https://export-download.canva.com/7NOZk/DAFdEZ7NOZk/22/0-43685992272.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJHKNGJLC2J7OGJ6Q%2F20230320%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230320T210059Z&X-Amz-Expires=52560&X-Amz-Signature=f84ff788303378678ecfe522ea627cf5f1cbd34935557176ac9c44abfb7f3bf8&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27CV-Tr%25C6%25B0%25C6%25A1ng%2520Minh%2520Ho%25C3%25A0ng-v3.pdf&response-expires=Tue%2C%2021%20Mar%202023%2011%3A36%3A59%20GMT",
+            downloadCVLink: process.env.NEXT_PUBLIC_DOWNLOAD_CV_URL || "",
+          },
+        },
+        {
+          type: "contactMe",
+          data: {
+            title: "Let's get in touch",
+            name: process.env.NEXT_PUBLIC_NAME || "",
+            email: process.env.NEXT_PUBLIC_EMAIL || "",
+            phone: process.env.NEXT_PUBLIC_PHONE || "",
+            address: "Ho Chi Minh City, VN.",
+          },
+        },
+        {
+          type: "footer",
+          data: {
+            year: process.env.NEXT_PUBLIC_YEAR || 0,
+            name: process.env.NEXT_PUBLIC_BRAND_NAME || "",
           },
         },
       ],

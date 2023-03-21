@@ -9,6 +9,7 @@ interface Props extends DefaultPageProps {
   location: string;
   action: string;
   actionLink: string;
+  image: string;
 }
 const HomeBanner: React.FC<Props> = ({
   greeting,
@@ -16,6 +17,7 @@ const HomeBanner: React.FC<Props> = ({
   actionLink,
   action,
   location,
+  image,
 }) => {
   const themeColor: string = useSelector(
     (state: any) => state.themeColorReducer
@@ -40,6 +42,8 @@ const HomeBanner: React.FC<Props> = ({
           <Box
             order={{ base: "2", lg: "1" }}
             textAlign={{ base: "center", lg: "left" }}
+            width={{ base: "100%", lg: "58.33333333%" }}
+            overflow="hidden"
           >
             <Heading
               as="h1"
@@ -88,9 +92,10 @@ const HomeBanner: React.FC<Props> = ({
             </Link>
           </Box>
           <Box
-            width={{ base: "100%", md: "41.66666667%" }}
+            width={{ base: "fit-content", lg: "41.66666667%" }}
             flex="0 0 auto"
             order={{ base: "1", lg: "2" }}
+            marginBottom={{ base: "1rem", lg: "0" }}
             padding="0 12px"
           >
             <Box
@@ -99,12 +104,7 @@ const HomeBanner: React.FC<Props> = ({
               boxShadow={"0 1rem 3rem rgba(0,0,0,.175)"}
               padding="1rem"
             >
-              <Image
-                src={"/images/potrait.jpg"}
-                alt=""
-                maxWidth={"100%"}
-                borderRadius="50%"
-              />
+              <Image src={image} alt="" maxWidth={"100%"} borderRadius="50%" />
             </Box>
           </Box>
         </Flex>

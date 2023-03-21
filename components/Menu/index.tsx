@@ -171,6 +171,7 @@ const Menu: React.FC<Props> = ({ menus, themeColor }) => {
                 width={"full"}
                 height="full"
                 href="https://github.com/minhhoang1110"
+                target={"_blank"}
                 _hover={{ textDecoration: "none", color: themeColor }}
               >
                 <Icon as={FaGithub} />
@@ -197,6 +198,7 @@ const Menu: React.FC<Props> = ({ menus, themeColor }) => {
                 width={"full"}
                 height="full"
                 href="https://www.linkedin.com/in/hoang-truong-4a0a471a6/"
+                target={"_blank"}
                 _hover={{ textDecoration: "none", color: themeColor }}
               >
                 <Icon as={FaLinkedin} />
