@@ -26,6 +26,8 @@ const HomeBanner: React.FC<Props> = ({
       height="calc(100vh - 66px)"
       background={themeColor}
       overflow="hidden"
+      position={"relative"}
+      id="homeBanner"
     >
       <Container>
         <Flex

@@ -17,19 +17,19 @@ export const getStaticProps: GetStaticProps = async () => {
             menus: [
               {
                 label: "Home",
-                link: "/",
+                link: "homeBanner",
               },
               {
                 label: "About Me",
-                link: "/",
+                link: "aboutMe",
               },
               {
                 label: "Resume",
-                link: "/",
+                link: "resume",
               },
               {
                 label: "Contact Me",
-                link: "/",
+                link: "contactMe",
               },
             ],
           },
@@ -56,6 +56,54 @@ export const getStaticProps: GetStaticProps = async () => {
             dateOfBirth: "17 August, 1999",
             email: "minhhoang111099@gmail.com",
             address: "Ho Chi Minh City, VN.",
+          },
+        },
+        {
+          type: "resume",
+          data: {
+            title: "A summary of My Resume",
+            subtitle: "Resume",
+            education: [
+              {
+                title: "Infomation Technology",
+                subtitle:
+                  "Posts and Telecommunications Institute of Technology / 2017",
+              },
+              {
+                title: "Front-end Course",
+                subtitle:
+                  "BeCodeching - Chuyên Dạy Lập Trình Cho Sinh Viên Và Người Trái Ngành / 2020",
+              },
+            ],
+            experience: [
+              {
+                title: "Front-end Developer",
+                subtitle: "TECHSEED JOINT STOCK COMPANY, 11/2020 - 10/2022",
+                description:
+                  "Responsible for working on a portal website for employers in the GetJob system, this website is for employers to manage their jobs and employees.",
+              },
+              {
+                title: "Front-end Developer",
+                subtitle: "FREELANCER, 12/2022 - 03/2023",
+                description:
+                  "Build UI for a website about Client's spa information, their services, products and blogs. Build ad Admin page that allow to change UI, content, manage services, products and blogs of the main website.",
+              },
+            ],
+            skills: [
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "TypeScript",
+              "JQuery",
+              "ReactJS",
+              "NextJS",
+              "JSON",
+              "AJAX",
+              "REST",
+              "Git",
+            ],
+            downloadCVLink:
+              "https://export-download.canva.com/7NOZk/DAFdEZ7NOZk/22/0-43685992272.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJHKNGJLC2J7OGJ6Q%2F20230320%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230320T210059Z&X-Amz-Expires=52560&X-Amz-Signature=f84ff788303378678ecfe522ea627cf5f1cbd34935557176ac9c44abfb7f3bf8&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27CV-Tr%25C6%25B0%25C6%25A1ng%2520Minh%2520Ho%25C3%25A0ng-v3.pdf&response-expires=Tue%2C%2021%20Mar%202023%2011%3A36%3A59%20GMT",
           },
         },
       ],

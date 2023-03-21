@@ -43,7 +43,7 @@ const AboutMeSection: React.FC<Props> = ({
     );
   };
   return (
-    <Box width={"full"} background="#ffffff" padding={"6.5rem 0"}>
+    <Box id="aboutMe" width={"full"} background="#ffffff" padding={"6.5rem 0"}>
       <Container>
         <Flex width={"full"} justifyContent="center" marginBottom={"0.5rem"}>
           <Text

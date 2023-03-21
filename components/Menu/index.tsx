@@ -1,3 +1,4 @@
+import { DEFAULT_VIEW_ID } from "@/configs/constants";
 import { DefaultPageProps } from "@/types/base";
 import {
   Box,
@@ -18,9 +19,17 @@ interface Props extends DefaultPageProps {
   menus: MenuItem[];
 }
 const Menu: React.FC<Props> = ({ menus, themeColor }) => {
-  const [isClickedButton, setIsClickedButton] = useState(false);
+  const [viewElementID, setViewElementID] = useState<string>(DEFAULT_VIEW_ID);
+  const [isClickedButton, setIsClickedButton] = useState<boolean>(false);
   const handleOnClickButton = () => {
     setIsClickedButton(!isClickedButton);
+  };
+  const handleOnClickMenu = (id: string) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+    element.scrollIntoView();
+    setViewElementID(id);
+    setIsClickedButton(false);
   };
   return (
     <Box>
@@ -117,17 +126,17 @@ const Menu: React.FC<Props> = ({ menus, themeColor }) => {
                   lineHeight={"31.5px"}
                 >
                   <Link
-                    href={menu.link}
                     display="block"
                     width={"full"}
                     padding="8px 0"
-                    color={"#ffffff"}
+                    color={menu.link === viewElementID ? themeColor : "#ffffff"}
                     transition="all .2s ease"
                     transform={
                       isClickedButton ? "translateY(0)" : "translateY(-80px)"
                     }
                     opacity={isClickedButton ? "1" : "0"}
                     _hover={{ textDecoration: "none", color: themeColor }}
+                    onClick={() => handleOnClickMenu(menu.link)}
                   >
                     {menu.label}
                   </Link>
