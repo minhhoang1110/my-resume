@@ -1,9 +1,11 @@
 import AboutMeSection from "../AboutMeSection";
+import ColorSwitcher from "../ColorSwitcher";
 import ContactMeSection from "../ContactMeSection";
 import Footer from "../Footer";
 import Header from "../Header";
 import HomeBanner from "../HomeBanner";
 import ResumeSection from "../ResumeSection";
+import ScrollToTop from "../ScrollToTop";
 
 interface Props {
   data: any;
@@ -24,6 +26,10 @@ const renderAllSections = ({ data, type }: Props) => {
       return <ContactMeSection {...data} />;
     case "footer":
       return <Footer {...data} />;
+    case "scrollToTop":
+      return <ScrollToTop />;
+    case "colorSwitcher":
+      return <ColorSwitcher {...data} />;
     default:
       return "";
   }

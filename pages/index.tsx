@@ -123,6 +123,25 @@ export const getStaticProps: GetStaticProps = async () => {
             name: process.env.NEXT_PUBLIC_BRAND_NAME || "",
           },
         },
+        {
+          type: "scrollToTop",
+        },
+        {
+          type: "colorSwitcher",
+          data: {
+            title: "Color Switcher",
+            colors: [
+              { color: "aqua", title: "Cyan" },
+              { color: "#00fe9c", title: "Spring Green" },
+              { color: "#adff2f", title: "Green Yellow" },
+              { color: "#d6ed17", title: "Lime Punch" },
+              { color: "#ff91fb", title: "Violet" },
+              { color: "#fdbb2e", title: "Reset Default Orange" },
+              { color: "#eee8aa", title: "Pale Golden Rod" },
+              { color: "#f5df4e", title: "Yellow" },
+            ],
+          },
+        },
       ],
       bgColor: "#ffffff",
       textColor: "#212529",
