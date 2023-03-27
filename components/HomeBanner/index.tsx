@@ -1,8 +1,9 @@
 import { DefaultPageProps } from "@/types/base";
-import { Box, Flex, Heading, Link, Text, Image } from "@chakra-ui/react";
+import { Box, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 import Container from "../Container";
 import Typewriter from "typewriter-effect";
+import Image from "next/image";
 interface Props extends DefaultPageProps {
   greeting: string;
   typeWriters: string[];
@@ -22,6 +23,11 @@ const HomeBanner: React.FC<Props> = ({
   const themeColor: string = useSelector(
     (state: any) => state.themeColorReducer
   );
+  const handleOnClick = (id: string) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+    element.scrollIntoView();
+  };
   return (
     <Box
       width={"full"}
@@ -73,7 +79,7 @@ const HomeBanner: React.FC<Props> = ({
               {location}
             </Text>
             <Link
-              href={actionLink}
+              onClick={() => handleOnClick(actionLink)}
               color={"#ffffff"}
               display={"block"}
               fontWeight="700"
@@ -103,8 +109,16 @@ const HomeBanner: React.FC<Props> = ({
               borderRadius="50%"
               boxShadow={"0 1rem 3rem rgba(0,0,0,.175)"}
               padding="1rem"
+              width={"fit-content"}
             >
-              <Image src={image} alt="" maxWidth={"100%"} borderRadius="50%" />
+              <Image
+                src={image}
+                alt=""
+                width={400}
+                height={400}
+                style={{ maxWidth: "100%", borderRadius: "50%" }}
+                priority
+              />
             </Box>
           </Box>
         </Flex>

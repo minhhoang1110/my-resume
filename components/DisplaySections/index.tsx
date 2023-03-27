@@ -12,7 +12,7 @@ interface Props {
   type: string;
 }
 
-const renderAllSections = ({ data, type }: Props) => {
+const RenderAllSections: React.FC<Props> = ({ data, type }) => {
   switch (type) {
     case "header":
       return <Header {...data} />;
@@ -31,8 +31,8 @@ const renderAllSections = ({ data, type }: Props) => {
     case "colorSwitcher":
       return <ColorSwitcher {...data} />;
     default:
-      return "";
+      return <></>;
   }
 };
 
-export default renderAllSections;
+export default RenderAllSections;

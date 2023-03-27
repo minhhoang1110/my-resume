@@ -156,7 +156,7 @@ const ResumeSection: React.FC<Props> = ({
             fontWeight="500"
             transition={"all .5s ease"}
             border="2px solid #212529"
-            background={"#ffffff"}
+            background={"#F8F9FA"}
             _hover={{
               textDecoration: "none",
               background: "#212529",

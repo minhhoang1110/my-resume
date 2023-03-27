@@ -3,7 +3,9 @@ import { GetStaticProps } from "next";
 import React from "react";
 import MainLayout from "@/layouts";
 import { VStack } from "@chakra-ui/react";
-import renderAllSections from "@/components/DisplaySections";
+import dynamic from "next/dynamic";
+import { DEFAULT_THEME_COLOR } from "@/configs/constants";
+const RenderAllSections = dynamic(() => import("@/components/DisplaySections"));
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
@@ -41,8 +43,8 @@ export const getStaticProps: GetStaticProps = async () => {
             typeWriters: ["Front-end", "Developer"],
             location: "live in Ho Chi Minh City, VN.",
             action: "Contact Me",
-            actionLink: "#",
-            image: "/images/potrait.jpg",
+            actionLink: "contactMe",
+            image: "/images/potrait.webp",
           },
         },
         {
@@ -145,6 +147,9 @@ export const getStaticProps: GetStaticProps = async () => {
       ],
       bgColor: "#ffffff",
       textColor: "#212529",
+      manifestURL: "/manifest.json",
+      themeColor: DEFAULT_THEME_COLOR,
+      appleTouchIcon: "/images/user-96.png",
     },
   };
 };
@@ -157,9 +162,19 @@ interface PageProps {
   sections: SectionItem[];
   bgColor: string;
   textColor: string;
+  manifestURL: string;
+  themeColor: string;
+  appleTouchIcon: string;
 }
 
-const Home: React.FC<PageProps> = ({ sections, bgColor, textColor }) => {
+const Home: React.FC<PageProps> = ({
+  sections,
+  bgColor,
+  textColor,
+  manifestURL,
+  themeColor,
+  appleTouchIcon,
+}) => {
   return (
     <MainLayout bgColor={bgColor} textColor={textColor}>
       <Head>
@@ -170,14 +185,15 @@ const Home: React.FC<PageProps> = ({ sections, bgColor, textColor }) => {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href={manifestURL} />
+        <meta name="theme-color" content={themeColor} />
+        <link rel="apple-touch-icon" href={appleTouchIcon} />
+        <meta name="apple-mobile-web-app-status-bar" content={themeColor} />
       </Head>
       {sections &&
         sections.map((section, index) => (
           <VStack key={index} w="full" m="0 !important">
-            {renderAllSections({
-              data: section.data,
-              type: section.type,
-            })}
+            <RenderAllSections data={section.data} type={section.type} />
           </VStack>
         ))}
     </MainLayout>
