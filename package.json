@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "server": "next build && $env:NODE_ENV=\"production\" node ./server.js"
+    "lint": "next lint"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.5.1",
@@ -22,7 +21,6 @@
     "express": "^4.18.2",
     "framer-motion": "^10.5.0",
     "next": "13.2.4",
-    "next-offline": "^5.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
