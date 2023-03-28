@@ -5,6 +5,7 @@ import MainLayout from "@/layouts";
 import { VStack } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import { DEFAULT_THEME_COLOR } from "@/configs/constants";
+import { useSelector } from "react-redux";
 const RenderAllSections = dynamic(() => import("@/components/DisplaySections"));
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -175,10 +176,13 @@ const Home: React.FC<PageProps> = ({
   themeColor,
   appleTouchIcon,
 }) => {
+  const currentTheme: string = useSelector(
+    (state: any) => state.themeColorReducer
+  );
   return (
     <MainLayout bgColor={bgColor} textColor={textColor}>
       <Head>
-        <title>Hoang Truong</title>
+        <title>Hoang Truong Resume</title>
         <meta
           name="description"
           content="The website that is about my infomation and my resume"
@@ -186,9 +190,12 @@ const Home: React.FC<PageProps> = ({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href={manifestURL} />
-        <meta name="theme-color" content={themeColor} />
+        <meta name="theme-color" content={currentTheme || themeColor} />
         <link rel="apple-touch-icon" href={appleTouchIcon} />
-        <meta name="apple-mobile-web-app-status-bar" content={themeColor} />
+        <meta
+          name="apple-mobile-web-app-status-bar"
+          content={currentTheme || themeColor}
+        />
       </Head>
       {sections &&
         sections.map((section, index) => (
