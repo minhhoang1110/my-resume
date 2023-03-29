@@ -1,10 +1,12 @@
 import { DefaultPageProps } from "@/types/base";
 import { Box, Flex, Icon } from "@chakra-ui/react";
-import Container from "../Container";
 import { FaPhone } from "react-icons/fa";
-import Menu, { MenuItem } from "../Menu";
+import { MenuItem } from "../Menu";
 import { useSelector } from "react-redux";
 import { useScrolling } from "@/hooks";
+import { lazy } from "react";
+const Menu = lazy(() => import("../Menu"));
+const Container = lazy(() => import("../Container"));
 
 interface Props extends DefaultPageProps {
   logo: string;

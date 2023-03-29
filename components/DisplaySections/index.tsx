@@ -1,11 +1,13 @@
-import AboutMeSection from "../AboutMeSection";
+import { lazy } from "react";
 import ColorSwitcher from "../ColorSwitcher";
-import ContactMeSection from "../ContactMeSection";
-import Footer from "../Footer";
-import Header from "../Header";
 import HomeBanner from "../HomeBanner";
-import ResumeSection from "../ResumeSection";
 import ScrollToTop from "../ScrollToTop";
+
+const AboutMeSection = lazy(() => import("../AboutMeSection"));
+const ContactMeSection = lazy(() => import("../ContactMeSection"));
+const Footer = lazy(() => import("../Footer"));
+const Header = lazy(() => import("../Header"));
+const ResumeSection = lazy(() => import("../ResumeSection"));
 
 interface Props {
   data: any;

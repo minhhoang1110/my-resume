@@ -1,8 +1,9 @@
+import { lazy } from "react";
 import { DefaultPageProps } from "@/types/base";
 import { Box, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
-import Container from "../Container";
-import Typewriter from "typewriter-effect";
+const Container = lazy(() => import("../Container"));
+const Typewriter = lazy(() => import("typewriter-effect"));
 import Image from "next/image";
 interface Props extends DefaultPageProps {
   greeting: string;
