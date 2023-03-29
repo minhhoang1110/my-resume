@@ -1,8 +1,7 @@
 import { DefaultPageProps } from "@/types/base";
 import { Box, Flex, Heading, Link, Text } from "@chakra-ui/react";
-import { lazy } from "react";
 import { useSelector } from "react-redux";
-const Container = lazy(() => import("../Container"));
+import Container from "../Container";
 
 interface ResumeItem {
   title: string;

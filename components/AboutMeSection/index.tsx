@@ -1,8 +1,9 @@
 import { DefaultPageProps } from "@/types/base";
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
-import React, { lazy } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-const Container = lazy(() => import("../Container"));
+import Container from "../Container";
+
 interface Props extends DefaultPageProps {
   title: string;
   subtitle: string;

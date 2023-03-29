@@ -1,8 +1,7 @@
 import { DefaultPageProps } from "@/types/base";
 import { Box, Text } from "@chakra-ui/react";
-import { lazy } from "react";
 import { useSelector } from "react-redux";
-const Container = lazy(() => import("../Container"));
+import Container from "../Container";
 
 interface Props extends DefaultPageProps {
   year: number;
