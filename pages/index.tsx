@@ -83,26 +83,64 @@ export const getStaticProps: GetStaticProps = async () => {
               {
                 title: "Front-end Developer",
                 subtitle: "TECHSEED JOINT STOCK COMPANY, 11/2020 - 10/2022",
-                description:
-                  "Responsible for working on a portal website for employers in the GetJob system, this website is for employers to manage their jobs and employees.",
+                description: [
+                  "Built a webapp for Getjob system that is used for manage job and employees.",
+                  "Learned Back-end skills and used these skills to develop server for Getjob system.",
+                  "Technical: HTML, CSS/SCSS, UIkit, Javascript, ReactJS, Rest API, Golang, PostgreSQL.",
+                ],
+              },
+            ],
+            personalProject: [
+              {
+                title: "Web Developer",
+                subtitle: "Social Networking Site Project, 6/2023",
+                description: [
+                  "Features: Login, Sign up, Forgot Password, Profile, New feed, Post Status, Like, Comment, Add Friend, Chat.",
+                  "Technical: NextJs, Typescript, Tailwind CSS, Axios, Java Spring Boot, Postgres.",
+                ],
+                demo: "https://sn-site-frontend.vercel.app/",
+                code: [
+                  "https://github.com/minhhoang1110/sn-site-frontend",
+                  "https://github.com/minhhoang1110/sn-site-backend",
+                ],
               },
               {
                 title: "Front-end Developer",
-                subtitle: "FREELANCER, 12/2022 - 03/2023",
-                description:
-                  "Build UI for a website about Client's spa information, their services, products and blogs. Build ad Admin page that allow to change UI, content, manage services, products and blogs of the main website.",
+                subtitle: "TMH Blog, 3/2023",
+                description: [
+                  "Technical: HTML, CSS, TailwindCSS, TypeScript, NextJS, Pismic.",
+                ],
+                demo: "https://tmh-blog-minhhoang1110.vercel.app/",
+                code: ["https://github.com/minhhoang1110/tmh-blog"],
+              },
+              {
+                title: "Front-end Developer",
+                subtitle: "A simple weather app, 2/2023",
+                description: [
+                  "Features: Search cites by name, show current weather (Temperature, Humidity, Sea Level, Wind, Pressure, ...), show forecast in next hours.",
+                  "Technical: HTML, CSS, CharkaUI, TypeScript, NextJS, Redux, Rest API, OpenWeather API, RapidAPI (GeoDB Cities API).",
+                ],
+                demo: "https://nextjs-wheather-app.vercel.app/",
+                code: ["https://github.com/minhhoang1110/nextjs-wheather-app"],
               },
             ],
             skills: [
               "HTML",
               "CSS",
+              "Bootstrap",
+              "Tailwind",
               "JavaScript",
               "TypeScript",
               "JQuery",
+              "Redux",
               "ReactJS",
               "NextJS",
               "JSON",
               "AJAX",
+              "Java",
+              "Spring boot",
+              "MySQL",
+              "Postgres",
               "REST",
               "Git",
             ],

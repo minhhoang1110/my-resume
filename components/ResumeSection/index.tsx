@@ -6,13 +6,16 @@ import Container from "../Container";
 interface ResumeItem {
   title: string;
   subtitle: string;
-  description?: string;
+  description?: string[];
+  demo?: string;
+  code?: string[];
 }
 interface Props extends DefaultPageProps {
   title: string;
   subtitle: string;
   education: ResumeItem[];
   experience: ResumeItem[];
+  personalProject: ResumeItem[];
   skills: string[];
   downloadCVLink: string;
 }
@@ -21,6 +24,7 @@ const ResumeSection: React.FC<Props> = ({
   subtitle,
   education,
   experience,
+  personalProject,
   skills,
   downloadCVLink,
 }) => {
@@ -29,12 +33,13 @@ const ResumeSection: React.FC<Props> = ({
   );
   const showResumeInfomation = (
     title: string,
-    data: ResumeItem[]
+    data: ResumeItem[],
+    width: "50%" | "100%"
   ): JSX.Element => {
     return (
       <Box
         flex="0 0 auto"
-        width={{ base: "100%", lg: "50%" }}
+        width={{ base: "100%", lg: width }}
         marginTop="3rem"
         padding={"0 1.5rem"}
       >
@@ -66,18 +71,51 @@ const ResumeSection: React.FC<Props> = ({
                 <Text marginBottom={"0.5rem"} fontWeight="400">
                   {item.subtitle}
                 </Text>
-                {item.description && (
+                {item.description &&
+                  item.description.length > 0 &&
+                  item.description.map((text, index) => (
+                    <Text key={index} color={"#8e9a9d"} marginBottom={"1rem"}>
+                      {text}
+                    </Text>
+                  ))}
+                {item.demo && (
                   <Text color={"#8e9a9d"} marginBottom={"1rem"}>
-                    {item.description}
+                    Demo:{" "}
+                    <Link href={item.demo} target="_blank">
+                      {item.demo}
+                    </Link>
                   </Text>
                 )}
-                <Box
-                  width={"full"}
-                  height="1px"
-                  background={"#8e9a9d"}
-                  margin="1.5rem 0"
-                  opacity={"0.3"}
-                ></Box>
+                {item.code && item.code.length > 0 && (
+                  <Flex>
+                    <Text color={"#8e9a9d"} marginRight={"0.5rem"}>
+                      Code:
+                    </Text>
+                    <Box>
+                      {item.code.map((text, index) => (
+                        <Link
+                          key={index}
+                          color={"#8e9a9d"}
+                          marginBottom={"0.5rem"}
+                          href={text}
+                          target="_blank"
+                          display={"block"}
+                        >
+                          {text}
+                        </Link>
+                      ))}
+                    </Box>
+                  </Flex>
+                )}
+                {index < data.length - 1 && (
+                  <Box
+                    width={"full"}
+                    height="1px"
+                    background={"#8e9a9d"}
+                    margin="1.5rem 0"
+                    opacity={"0.3"}
+                  ></Box>
+                )}
               </Box>
             ))}
           </Box>
@@ -113,9 +151,12 @@ const ResumeSection: React.FC<Props> = ({
           margin={"0 -1.5rem"}
           flexDirection={{ base: "column", lg: "row" }}
         >
-          {showResumeInfomation("My Education", education)}
-          {showResumeInfomation("My Experience", experience)}
+          {showResumeInfomation("My Education", education, "50%")}
+          {showResumeInfomation("My Experience", experience, "50%")}
         </Flex>
+        <Box margin={"0 -1.5rem"}>
+          {showResumeInfomation("Personal Project", personalProject, "100%")}
+        </Box>
         {skills.length > 0 && (
           <>
             <Heading
