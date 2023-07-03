@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps = async () => {
           type: "homeBanner",
           data: {
             greeting: "Hi, I'm Minh Hoàng",
-            typeWriters: ["Front-end", "Developer"],
+            typeWriters: ["Web", "Developer"],
             location: "live in Ho Chi Minh City, VN.",
             action: "Contact Me",
             actionLink: "contactMe",
@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps = async () => {
             subtitle: "About Me",
             name: process.env.NEXT_PUBLIC_NAME || "",
             description:
-              "I have 2 years of experience as a Front-end Developer with HTML, CSS, and Javascript and Good at creating pixel-perfect designs and working with cross-browser compatibility issues. I'm looking for a suitable position with a company where I can use my skills and experience, learn new knowledge, and where outstanding performance is recognized, and rewarded.",
+              "I'm a problem-solver, and I like challenges. I'm a web developer with experience in Front-end and a desire to learn and work with Back-end. I'm looking for a suitable position at a company with projects that can help me improve my skills and where contributions are recognized and rewarded.",
             yearOfExp: 2,
             dateOfBirth: "17 August, 1999",
             email: process.env.NEXT_PUBLIC_EMAIL || "",
@@ -96,7 +96,7 @@ export const getStaticProps: GetStaticProps = async () => {
                 subtitle: "Social Networking Site Project, 6/2023",
                 description: [
                   "Features: Login, Sign up, Forgot Password, Profile, New feed, Post Status, Like, Comment, Add Friend, Chat.",
-                  "Technical: NextJs, Typescript, Tailwind CSS, Axios, Java Spring Boot, Postgres.",
+                  "Technical: NextJs, Typescript, Tailwind CSS, Axios, Java Spring Boot, PostgreSQL.",
                 ],
                 demo: "https://sn-site-frontend.vercel.app/",
                 code: [
@@ -108,7 +108,7 @@ export const getStaticProps: GetStaticProps = async () => {
                 title: "Front-end Developer",
                 subtitle: "TMH Blog, 3/2023",
                 description: [
-                  "Technical: HTML, CSS, TailwindCSS, TypeScript, NextJS, Pismic.",
+                  "Technical: HTML, CSS, TailwindCSS, TypeScript, NextJS, Prismic CMS.",
                 ],
                 demo: "https://tmh-blog-minhhoang1110.vercel.app/",
                 code: ["https://github.com/minhhoang1110/tmh-blog"],
@@ -140,7 +140,7 @@ export const getStaticProps: GetStaticProps = async () => {
               "Java",
               "Spring boot",
               "MySQL",
-              "Postgres",
+              "PostgreSQL",
               "REST",
               "Git",
             ],

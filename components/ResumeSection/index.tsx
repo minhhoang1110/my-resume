@@ -190,6 +190,7 @@ const ResumeSection: React.FC<Props> = ({
         )}
         <Flex justifyContent={"center"}>
           <Link
+            target={"_blank"}
             href={downloadCVLink}
             display={"block"}
             margin="3rem 0 1rem 0"
